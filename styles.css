@@ -488,6 +488,118 @@ svg {
   }
 }
 
+/* Hero — office photo variant (元のネイビー基調カラーを維持) */
+.hero.hero-office {
+  position: relative;
+  min-height: 0;
+  padding: 0;
+  background: #fff;
+  overflow: hidden;
+}
+
+.hero.hero-office::before {
+  content: none;
+}
+
+.hero-office-stage {
+  position: relative;
+  width: 100%;
+  max-width: 1720px;
+  margin: 0 auto;
+  aspect-ratio: 16 / 7;
+  min-height: 380px;
+  overflow: hidden;
+}
+
+.hero-office-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.hero-office-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(8, 42, 79, 0.78) 0%, rgba(8, 42, 79, 0.55) 42%, rgba(8, 42, 79, 0.18) 78%, rgba(8, 42, 79, 0) 100%),
+    linear-gradient(180deg, rgba(8, 42, 79, 0.20) 0%, rgba(8, 42, 79, 0) 35%);
+  pointer-events: none;
+}
+
+.hero-office-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding: 6% 7%;
+  max-width: 720px;
+  color: #ffffff;
+}
+
+.hero-office .hero-office-kicker {
+  margin: 0 0 14px;
+  color: var(--gold-light);
+  font-size: clamp(11px, 0.95vw, 14px);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.hero-office .hero-office-title,
+.hero.hero-office h1.hero-office-title {
+  margin: 0;
+  color: #ffffff;
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: clamp(30px, 4.4vw, 60px);
+  line-height: 1.4;
+  letter-spacing: 0.05em;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.55);
+}
+
+.hero-office .hero-office-lead {
+  margin: 18px 0 28px;
+  color: #ffffff;
+  font-size: clamp(13px, 1.05vw, 16px);
+  font-weight: 600;
+  line-height: 1.9;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.55);
+}
+
+.hero-office-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.hero-office-actions .button {
+  min-width: 0;
+}
+
+.hero-office-actions .button.outline {
+  background: rgba(255, 255, 255, 0.94);
+}
+
+@media (max-width: 720px) {
+  .hero-office-stage {
+    aspect-ratio: 4 / 5;
+    min-height: 480px;
+  }
+  .hero-office-content {
+    max-width: 100%;
+    padding: 30px 26px;
+  }
+  .hero-office-overlay {
+    background:
+      linear-gradient(180deg, rgba(8, 42, 79, 0.55) 0%, rgba(8, 42, 79, 0.30) 35%, rgba(8, 42, 79, 0.78) 100%);
+  }
+}
+
 /* Features */
 .feature-band {
   background: #fff;

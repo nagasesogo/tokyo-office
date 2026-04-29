@@ -1,0 +1,513 @@
+/* ==========================================================================
+   Luxury Theme — 黒×ゴールド
+   styles.css の後に読み込むことで、配色のみを上書きします。
+   レイアウト・タイポグラフィは原則変更しません。
+   ========================================================================== */
+
+/* --- カラートークンの上書き ---------------------------------------------- */
+.theme-luxury {
+  --navy: #0f0f10;
+  --navy-deep: #050506;
+  --navy-soft: #1c1c1f;
+  --gold: #c9a961;
+  --gold-light: #e4c989;
+  --text: #f1ebd9;
+  --muted: #b6ad96;
+  --line: rgba(201, 169, 97, 0.22);
+  --paper: #111113;
+  --pale: #18181b;
+  --shadow: 0 18px 50px rgba(0, 0, 0, 0.65);
+}
+
+/* --- グローバル背景 / テキスト ------------------------------------------- */
+.theme-luxury body,
+body.theme-luxury {
+  background: #0a0a0b;
+  color: var(--text);
+}
+
+.theme-luxury main,
+.theme-luxury .information,
+.theme-luxury .feature-band,
+.theme-luxury .practice,
+.theme-luxury .promo-banners,
+.theme-luxury .flow,
+.theme-luxury .contact-cta {
+  background: #0a0a0b;
+  color: var(--text);
+}
+
+.theme-luxury a {
+  color: inherit;
+}
+
+/* --- ヘッダー ------------------------------------------------------------ */
+.theme-luxury .site-header {
+  background: rgba(10, 10, 11, 0.96);
+  border-bottom: 1px solid var(--line);
+}
+
+.theme-luxury .brand-office,
+.theme-luxury .brand-branch {
+  color: var(--gold);
+}
+
+.theme-luxury .brand-branch {
+  color: var(--text);
+}
+
+.theme-luxury .header-tel,
+.theme-luxury .header-tel strong {
+  color: var(--gold);
+}
+
+.theme-luxury .header-tel small {
+  color: var(--muted);
+}
+
+.theme-luxury .reservation-btn {
+  background: linear-gradient(180deg, #d4b06b, #b18a3e);
+  color: #0a0a0b;
+  border: 1px solid var(--gold);
+  font-weight: 700;
+}
+
+.theme-luxury .reservation-btn:hover {
+  background: linear-gradient(180deg, #e4c989, #c9a961);
+}
+
+.theme-luxury .global-nav {
+  background: #0a0a0b;
+  border-bottom: 1px solid var(--line);
+}
+
+.theme-luxury .global-nav a {
+  color: var(--text);
+}
+
+.theme-luxury .global-nav a:hover,
+.theme-luxury .global-nav a.current {
+  color: var(--gold);
+}
+
+.theme-luxury .nav-toggle span,
+.theme-luxury .nav-toggle em {
+  background: var(--gold);
+  color: var(--gold);
+}
+
+/* --- ヒーロー（黒×ゴールド・事務所写真版） ------------------------------ */
+.theme-luxury .hero-luxury {
+  position: relative;
+  min-height: 0;
+  padding: 0;
+  background: #0a0a0b;
+  overflow: hidden;
+}
+
+.theme-luxury .hero-luxury::before {
+  content: none;
+}
+
+.theme-luxury .hero-luxury-stage {
+  position: relative;
+  width: 100%;
+  max-width: 1720px;
+  margin: 0 auto;
+  aspect-ratio: 16 / 7;
+  min-height: 380px;
+  overflow: hidden;
+}
+
+.theme-luxury .hero-luxury-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.theme-luxury .hero-luxury-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.78) 0%, rgba(0, 0, 0, 0.55) 42%, rgba(0, 0, 0, 0.18) 78%, rgba(0, 0, 0, 0) 100%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 35%);
+  pointer-events: none;
+}
+
+.theme-luxury .hero-luxury-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding: 6% 7% 6% 7%;
+  max-width: 720px;
+}
+
+.theme-luxury .hero-luxury-kicker {
+  margin: 0 0 16px;
+  color: var(--gold);
+  font-family: var(--serif);
+  font-size: clamp(11px, 0.95vw, 14px);
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+
+.theme-luxury .hero-luxury-title {
+  margin: 0 0 18px;
+  color: #f7f1de;
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: clamp(28px, 4vw, 56px);
+  line-height: 1.4;
+  letter-spacing: 0.05em;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.55);
+}
+
+.theme-luxury .hero-luxury-lead {
+  margin: 0 0 28px;
+  color: #e7dfc8;
+  font-size: clamp(13px, 1.1vw, 16px);
+  line-height: 1.9;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.55);
+}
+
+.theme-luxury .hero-luxury-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.theme-luxury .hero-luxury-actions .button-luxury {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+  padding: 14px 24px;
+  font-size: clamp(12px, 1.0vw, 14px);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: opacity 0.2s ease, transform 0.2s ease, background 0.2s ease;
+}
+
+.theme-luxury .hero-luxury-actions .button-luxury.primary {
+  background: linear-gradient(180deg, #d4b06b, #b18a3e);
+  color: #0a0a0b;
+  border: 1px solid var(--gold);
+}
+
+.theme-luxury .hero-luxury-actions .button-luxury.primary:hover {
+  background: linear-gradient(180deg, #e4c989, #c9a961);
+  transform: translateY(-1px);
+}
+
+.theme-luxury .hero-luxury-actions .button-luxury.outline {
+  background: transparent;
+  color: var(--gold-light);
+  border: 1px solid var(--gold);
+}
+
+.theme-luxury .hero-luxury-actions .button-luxury.outline:hover {
+  background: rgba(201, 169, 97, 0.12);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 720px) {
+  .theme-luxury .hero-luxury-stage {
+    aspect-ratio: 4 / 5;
+    min-height: 480px;
+  }
+  .theme-luxury .hero-luxury-content {
+    max-width: 100%;
+    padding: 30px 26px;
+  }
+  .theme-luxury .hero-luxury-overlay {
+    background:
+      linear-gradient(180deg, rgba(0, 0, 0, 0.62) 0%, rgba(0, 0, 0, 0.40) 35%, rgba(0, 0, 0, 0.78) 100%);
+  }
+}
+
+/* --- 特長帯 -------------------------------------------------------------- */
+.theme-luxury .feature-band {
+  background: #111113;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.theme-luxury .feature-card {
+  color: var(--text);
+}
+
+.theme-luxury .feature-card h2 {
+  color: var(--gold);
+}
+
+.theme-luxury .feature-card p {
+  color: var(--muted);
+}
+
+.theme-luxury .feature-icon {
+  color: var(--gold);
+}
+
+.theme-luxury .feature-icon svg {
+  stroke: var(--gold);
+}
+
+/* --- 取扱分野 ------------------------------------------------------------ */
+.theme-luxury .practice {
+  background: #0a0a0b;
+}
+
+.theme-luxury .practice .heading-line h2,
+.theme-luxury .heading-line h2 {
+  color: var(--gold);
+}
+
+.theme-luxury .heading-line span {
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.theme-luxury .practice-card {
+  background: #15151a;
+  border: 1px solid var(--line);
+  color: var(--text);
+}
+
+.theme-luxury .practice-card span {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.10), rgba(10, 10, 11, 0.92));
+  color: var(--gold-light);
+}
+
+/* --- バナー帯 ------------------------------------------------------------ */
+.theme-luxury .promo-banners {
+  background: #0a0a0b;
+}
+
+/* --- 新着情報 ------------------------------------------------------------ */
+.theme-luxury .news,
+.theme-luxury .office,
+.theme-luxury .branch-network,
+.theme-luxury .tx {
+  background: #111113;
+  border: 1px solid var(--line);
+  color: var(--text);
+}
+
+.theme-luxury .panel-heading h2,
+.theme-luxury .news-list time,
+.theme-luxury .news-list span {
+  color: var(--gold);
+}
+
+.theme-luxury .news-list a {
+  color: var(--text);
+}
+
+.theme-luxury .news-list a:hover {
+  color: var(--gold-light);
+}
+
+.theme-luxury .news-list li {
+  border-bottom: 1px solid var(--line);
+}
+
+.theme-luxury .news-note {
+  color: var(--muted);
+}
+
+/* --- 東京支所のご案内 ---------------------------------------------------- */
+.theme-luxury .office,
+.theme-luxury .office-copy h2 {
+  color: var(--gold);
+}
+
+.theme-luxury .office-copy address,
+.theme-luxury .office-copy p {
+  color: var(--text);
+}
+
+.theme-luxury .office img {
+  border: 1px solid var(--line);
+}
+
+/* --- 茨城4拠点グリッド -------------------------------------------------- */
+.theme-luxury .branch-network {
+  background: #111113;
+}
+
+.theme-luxury .branch-kicker {
+  color: var(--gold);
+}
+
+.theme-luxury #branch-network-title {
+  color: var(--gold);
+}
+
+.theme-luxury .branch-lead {
+  color: var(--muted);
+}
+
+.theme-luxury .branch-grid article {
+  background: #15151a;
+  border: 1px solid var(--line);
+}
+
+.theme-luxury .branch-grid h3 {
+  color: var(--gold);
+}
+
+.theme-luxury .branch-grid p {
+  color: var(--text);
+}
+
+.theme-luxury .branch-grid a {
+  color: var(--gold-light);
+}
+
+.theme-luxury .branch-grid a.branch-link h3 {
+  color: var(--gold);
+}
+
+.theme-luxury .branch-grid a.branch-link p {
+  color: var(--text);
+}
+
+/* --- TX沿線 -------------------------------------------------------------- */
+.theme-luxury .tx {
+  background: linear-gradient(160deg, #15151a 0%, #0a0a0b 100%);
+  border: 1px solid var(--line);
+}
+
+.theme-luxury .tx-label {
+  color: var(--gold);
+}
+
+.theme-luxury #tx-title {
+  color: var(--gold);
+}
+
+.theme-luxury .tx-sub,
+.theme-luxury .tx-note {
+  color: var(--muted);
+}
+
+.theme-luxury .station-circles div {
+  background: #1c1c1f;
+  border: 1px solid var(--line);
+  color: var(--text);
+}
+
+.theme-luxury .station-circles strong {
+  color: var(--gold);
+}
+
+.theme-luxury .rail-line {
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.theme-luxury .text-link {
+  color: var(--gold);
+}
+
+/* --- ご相談の流れ -------------------------------------------------------- */
+.theme-luxury .flow {
+  background: #111113;
+}
+
+.theme-luxury #flow-title {
+  color: var(--gold);
+}
+
+.theme-luxury .flow-card {
+  background: #15151a;
+  border: 1px solid var(--line);
+  color: var(--text);
+}
+
+.theme-luxury .flow-card b {
+  background: linear-gradient(180deg, #d4b06b, #b18a3e);
+  color: #0a0a0b;
+}
+
+.theme-luxury .flow-card svg {
+  stroke: var(--gold);
+}
+
+.theme-luxury .flow-card h3 {
+  color: var(--gold);
+}
+
+.theme-luxury .flow-card p {
+  color: var(--text);
+}
+
+/* --- お問い合わせCTA --------------------------------------------------- */
+.theme-luxury .contact-cta {
+  background: linear-gradient(160deg, #1c1c1f, #0a0a0b);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  color: var(--text);
+}
+
+.theme-luxury #contact-title {
+  color: var(--gold);
+}
+
+.theme-luxury .cta-phone {
+  background: transparent;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+}
+
+.theme-luxury .cta-phone small {
+  color: var(--muted);
+}
+
+.theme-luxury .cta-reserve {
+  background: linear-gradient(180deg, #d4b06b, #b18a3e);
+  color: #0a0a0b;
+  border: 1px solid var(--gold);
+}
+
+/* --- フッター ------------------------------------------------------------ */
+.theme-luxury .site-footer {
+  background: #050506;
+  color: var(--text);
+  border-top: 1px solid var(--line);
+}
+
+.theme-luxury .site-footer a {
+  color: var(--text);
+}
+
+.theme-luxury .site-footer a:hover {
+  color: var(--gold);
+}
+
+.theme-luxury .site-footer small {
+  color: var(--muted);
+}
+
+/* --- 浮遊CTA ------------------------------------------------------------ */
+.theme-luxury .floating-cta a {
+  background: linear-gradient(180deg, #d4b06b, #b18a3e);
+  color: #0a0a0b;
+  border-top: 1px solid var(--gold);
+}
+
+.theme-luxury .floating-cta a + a {
+  border-left: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+/* --- スキップリンク ------------------------------------------------------ */
+.theme-luxury .skip-link:focus {
+  background: var(--gold);
+  color: #0a0a0b;
+}
