@@ -12,6 +12,14 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" as="image" href="assets/office-hero.jpg">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* TX沿線：表示駅を4駅に変更したことに伴うレイアウト調整（本ページのみ） */
+    .station-circles { grid-template-columns: repeat(4, 1fr); }
+    .rail-line { grid-template-columns: repeat(4, 1fr); }
+    @media (max-width: 640px) {
+      .station-circles { grid-template-columns: repeat(3, 1fr); }
+    }
+  </style>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -155,8 +163,8 @@
         <a href="https://jiin-houmu-nagasesogo.com/" class="practice-card"><img src="assets/practice-temple.jpg" alt=""><span>寺院法務</span></a>
         <a href="https://unso-nagasesogo.com/" class="practice-card"><img src="assets/practice-transport.jpg" alt=""><span>運送・物流業</span></a>
         <a href="https://kenchiku-nagasesogo.com/" class="practice-card"><img src="assets/practice-construction.jpg" alt=""><span>建設業</span></a>
-        <a href="https://songai.nagasesogo.com/" class="practice-card"><img src="assets/practice-damages.jpg" alt=""><span>損害賠償</span></a>
-        <a href="https://nagasesogo.com/" class="practice-card"><img src="assets/practice-covid-vaccine.jpg" alt=""><span>新型コロナワクチン給付金</span></a>
+        <a href="https://songai-nagasesogo.com/" class="practice-card"><img src="assets/practice-damages.jpg" alt=""><span>損害賠償</span></a>
+        <a href="https://nagasesogo.com/support-covid-19-benefit/" class="practice-card"><img src="assets/practice-covid-vaccine.jpg" alt=""><span>新型コロナワクチン給付金</span></a>
         <a href="https://asbestos-nagasesogo.com/" class="practice-card"><img src="assets/practice-asbestos.jpg" alt=""><span>アスベスト被害</span></a>
       </div>
     </section>
@@ -260,15 +268,14 @@
             <p class="tx-sub">つくばエクスプレス沿線エリアを広くカバー</p>
 
             <div class="station-circles" aria-label="秋葉原からの目安所要時間">
-              <div><span>北千住</span><strong>約11分</strong></div>
-              <div><span>浅草</span><strong>約25分</strong></div>
-              <div><span>南流山</span><strong>約30分</strong></div>
-              <div><span>つくば</span><strong>約32分</strong></div>
-              <div><span>つくばみらい</span><strong>約45分</strong></div>
+              <div><span>北千住</span><strong>約10分</strong></div>
+              <div><span>流山おおたかの森</span><strong>約25分</strong></div>
+              <div><span>守谷</span><strong>約35分</strong></div>
+              <div><span>つくば</span><strong>約45分</strong></div>
             </div>
 
             <div class="rail-line" aria-hidden="true">
-              <i></i><i></i><i></i><i></i><i></i>
+              <i></i><i></i><i></i><i></i>
             </div>
 
             <p class="tx-note">東京支所と茨城県内4拠点が連携し、迅速で質の高いリーガルサービスを提供します。</p>
