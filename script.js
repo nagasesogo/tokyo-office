@@ -40,10 +40,21 @@
     },
   ];
 
+  // DOMParserで解析した文書ではスクリプトや画像読込みが実行されない
   const stripHtml = (value = '') => {
-    const div = document.createElement('div');
-    div.innerHTML = value;
-    return div.textContent || div.innerText || '';
+    const doc = new DOMParser().parseFromString(String(value), 'text/html');
+    return doc.body.textContent || '';
+  };
+
+  // 総合サイト（nagasesogo.com）配下のhttpsリンクのみ許可する
+  const safeLink = (value) => {
+    try {
+      const url = new URL(value);
+      const isOwnSite = url.hostname === 'nagasesogo.com' || url.hostname.endsWith('.nagasesogo.com');
+      return url.protocol === 'https:' && isOwnSite ? url.href : '';
+    } catch (error) {
+      return '';
+    }
   };
 
   const formatDate = (value) => {
@@ -56,13 +67,23 @@
     const list = document.getElementById('latest-news-list');
     if (!list) return;
 
-    list.innerHTML = items.map((item) => `
-      <li>
-        <time>${item.date}</time>
-        <span>${item.tag || 'お知らせ'}</span>
-        <a href="${item.link}" target="_blank" rel="noopener">${item.title}</a>
-      </li>
-    `).join('');
+    // 取得データはHTMLとして解釈させず、文字列として要素に設定する
+    list.replaceChildren(...items.map((item) => {
+      const li = document.createElement('li');
+      const time = document.createElement('time');
+      const tag = document.createElement('span');
+      const link = document.createElement('a');
+
+      time.textContent = item.date;
+      tag.textContent = item.tag || 'お知らせ';
+      link.textContent = item.title;
+      link.href = item.link;
+      link.target = '_blank';
+      link.rel = 'noopener';
+
+      li.append(time, tag, link);
+      return li;
+    }));
   };
 
   const loadLatestNews = async () => {
@@ -76,9 +97,9 @@
       const posts = await response.json();
       const items = posts.slice(0, 4).map((post) => ({
         date: formatDate(post.date),
-        tag: post._embedded?.['wp:term']?.[0]?.[0]?.name || 'お知らせ',
+        tag: stripHtml(post._embedded?.['wp:term']?.[0]?.[0]?.name) || 'お知らせ',
         title: stripHtml(post.title?.rendered),
-        link: post.link,
+        link: safeLink(post.link),
       })).filter((item) => item.title && item.link);
 
       renderNews(items.length ? items : fallbackNews);

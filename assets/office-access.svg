@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 490" font-family="Hiragino Sans, Yu Gothic, sans-serif">
+  <rect width="640" height="490" fill="#f4f6f9"/>
+  <text x="32" y="49" fill="#102947" font-size="30" font-weight="700">東京支所へのアクセス</text>
+  <text x="32" y="79" fill="#425873" font-size="17">駅からの徒歩案内（概略）</text>
+  <g fill="#fff" stroke="#c5d2e0" stroke-width="2">
+    <rect x="32" y="110" width="276" height="110" rx="12"/>
+    <rect x="332" y="110" width="276" height="110" rx="12"/>
+  </g>
+  <g text-anchor="middle" fill="#102947">
+    <text x="170" y="153" font-size="27" font-weight="700">岩本町駅</text>
+    <text x="170" y="188" font-size="21">A4出口</text>
+    <text x="470" y="153" font-size="27" font-weight="700">JR秋葉原駅</text>
+    <text x="470" y="188" font-size="21">昭和通り口</text>
+  </g>
+  <g fill="none" stroke="#7186a2" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M170 222v77h150m150-77v77H320v36m-7-8 7 8 7-8"/>
+  </g>
+  <g text-anchor="middle" fill="#102947" font-size="22" font-weight="700">
+    <text x="170" y="269" fill="#102947" stroke="#f4f6f9" stroke-width="9" paint-order="stroke">徒歩約1分</text>
+    <text x="470" y="269" fill="#102947" stroke="#f4f6f9" stroke-width="9" paint-order="stroke">徒歩約5分</text>
+  </g>
+  <rect x="32" y="346" width="576" height="112" rx="12" fill="#102947"/>
+  <g fill="#fff" text-anchor="middle">
+    <text x="320" y="391" font-size="30" font-weight="700">第一東ビル 8階 803号室</text>
+    <text x="320" y="431" font-size="23">東京都千代田区岩本町3-4-5</text>
+  </g>
+</svg>
